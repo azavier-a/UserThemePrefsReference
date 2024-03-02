@@ -1,0 +1,215 @@
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#quicknav {
+    height: 100%;
+    width: var(--ref-quicknav-width);
+    padding-top: 0.5em;
+
+    display: flex;
+    flex-direction: column;
+
+
+    background-color: var(--ref-quicknav-bg);
+
+    overflow: auto;
+}
+
+#quicknav a {
+    width: 100%;
+
+    padding: 0.5em 0.3em 0.5em;
+    padding-left: 0.5em;
+
+    user-select: none;
+
+    text-decoration: none;
+    color: var(--ref-quicknav-text);
+}
+
+#quicknav a:hover,
+#quicknav a:focus {
+    background-color: var(--ref-quicknav-hover-bg);
+    color: var(--ref-quicknav-hover-text);
+}
+
+#quicknav .active {
+    background-color: var(--ref-quicknav-active-bg);
+    color: var(--ref-quicknav-active-text);
+}
+#quicknav .active:hover {
+    background-color: var(--ref-quicknav-active-bg);
+    color: var(--ref-quicknav-active-text);
+}
+
+#quicknav .folder {
+    background-color: var(--ref-quicknav-unfolded-bg);
+    color: var(--ref-quicknav-unfolded-text);
+}
+
+#quicknav .folder.active:hover {
+    background-color: var(--ref-quicknav-unfolded-bg);
+    color: var(--ref-quicknav-unfolded-text);
+}
+
+.quicknav-box {
+    width: 100%;
+    height: fit-content;
+
+    padding-left: 1em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    width: calc(100% - var(--ref-quicknav-width) - var(--ref-content-gutter-width));
+    height: 100%;
+
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    padding: 0.2em 0.5em 0;
+    padding-top: 0.5em;
+
+    border-right: var(--ref-content-gutter-border-width) solid var(--ref-content-gutter-border-col);
+}
+
+#content>div {
+    height: min-content;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#content div>h1 {
+    width: 100%;
+    height: min-content;
+}
+
+#content div>a {
+    user-select: none;
+    cursor: pointer;
+
+    margin-left: 0.5em;
+
+    height: 2.3333333em;
+    width: min-content;
+}
+#content div>a:focus-visible {
+    outline: 2px outset black;
+
+    border-radius: 4px;
+}
+
+#ref-config-ico {
+    height: 2.3333333em;
+    width: min-content;
+
+    transition: transform 0.5s ease-in-out;
+}
+a:focus #ref-config-ico,
+a:focus-within #ref-config-ico {
+    transform: rotate(115deg);
+}
+
+#ref-config-ico path {
+    stroke: black;
+}
+
+#content p {
+    width: 75%;
+}
+
+#content > ul {
+    width: 80%;
+
+
+    margin-top: 0.5em;
+    margin-left: 2.5em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#content li {
+    list-style-type: none;
+    text-align: center;
+}
+
+#content>ul>li {
+    margin-right: 3em;
+
+    width: fit-content;
+    padding: 0.15em;
+
+    font-weight: bold;
+}
+
+#content ul ul>li {
+    font-weight: normal;
+}
+
+#settings {
+    background-color: var(--nav-bg-col);
+    position: absolute;
+
+    top: 15vh;
+    right: calc(0px - var(--settings-width));
+
+    width: var(--settings-width);
+    height: 60%;
+
+    padding: 1em;
+    transition: right 0.56s ease-in-out;
+
+    overscroll-behavior: none none;
+    overflow-y: auto;
+
+    cursor: default;
+}
+a:focus #settings,
+a:focus-within #settings {
+    right: 0;
+}
+
+#settings>span {
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#settings hr {
+    margin-bottom: 0.25em;
+    border-color: var(--ref-quicknav-text);
+}
+
+#settings form {
+    font-size: small;
+}
+
+#settings form span {
+    display: flex; 
+    flex-direction: row; 
+    align-items: center;
+}
+
+#settings label {
+    margin-right: 0.3em;
+}
+
+::selection {
+    background-color: rgb(211,255,244);
+}
+
+#clear-refprefs {
+    height: 2.3333333em;
+    width: min-content;
+    cursor: pointer;
+
+    stroke: black;
+}
